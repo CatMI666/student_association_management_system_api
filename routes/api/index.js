@@ -1,5 +1,7 @@
-var router = require('koa-router')()
-var user_router = require('./user_router')
+'use strict'
+
+let router = require('koa-router')()
+let user_router = require('./user_router')
 
 router.prefix('/api')
 

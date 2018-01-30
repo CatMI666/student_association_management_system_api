@@ -1,10 +1,12 @@
-var path = require('path')
+'use strict'
+
+let path = require('path')
 
 //错误日志输出完整路径
-var errorLogPath = path.resolve(__dirname, "../logs/error/error")
+let errorLogPath = path.resolve(__dirname, "../logs/error/error")
  
 //响应日志输出完整路径
-var responseLogPath = path.resolve(__dirname, "../logs/response/response")
+let responseLogPath = path.resolve(__dirname, "../logs/response/response")
 
 module.exports = {
   appenders: {

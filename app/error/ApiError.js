@@ -1,3 +1,5 @@
+'use strict'
+
 const ApiErrorNames = require('./ApiErrorNames')
 
 /**
@@ -9,11 +11,11 @@ class ApiError extends Error{
   constructor(error_name){
     super()
 
-    var error_info = ApiErrorNames.getErrorInfo(error_name)
-
-    this.name = error_name
-    this.code = error_info.code
-    this.message = error_info.message
+    let error_info = ApiErrorNames.getErrorInfo(error_name)
+    let self = this
+    self.name = error_name
+    self.code = error_info.code
+    self.message = error_info.message
   }
 }
 

@@ -1,9 +1,11 @@
-var ApiError = require('../app/error/ApiError')
+'use strict'
+
+let ApiError = require('../app/error/ApiError')
 
 /**
  * 在app.use(router)之前调用
  */
-var response_formatter = async (ctx) => {
+let response_formatter = async (ctx) => {
 
   //如果有返回数据，将返回数据添加到data中
   if (ctx.body) {
@@ -20,10 +22,10 @@ var response_formatter = async (ctx) => {
   }
 }
 
-var url_filter = (pattern) => {
+let url_filter = (pattern) => {
 
   return async (ctx, next) => {
-    var reg = new RegExp(pattern)
+    let reg = new RegExp(pattern)
     try {
       //先去执行路由
       await next()

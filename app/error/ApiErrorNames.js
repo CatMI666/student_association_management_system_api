@@ -1,7 +1,9 @@
+'use strict'
+
 /**
  * API错误名称
  */
-var ApiErrorNames = {}
+let ApiErrorNames = {}
 
 ApiErrorNames.UNKNOW_ERROR = "unknowError"
 ApiErrorNames.USER_NOT_EXIST = "userNotExist"
@@ -16,7 +18,7 @@ error_map.set(ApiErrorNames.USER_NOT_EXIST, { code: 101, message: '用户不存�
 
 //根据错误名称获取错误信息
 ApiErrorNames.getErrorInfo = (error_name) => {
-  var error_info
+  let error_info
   
   if (error_name) {
     error_info = error_map.get(error_name)
