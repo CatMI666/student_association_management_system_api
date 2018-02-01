@@ -1,3 +1,10 @@
+const dbPool = require('./app/database') // 注册数据库链接池
+const mongoose = require('mongoose') // 注册 mongodb 对象模型工具
+mongoose.connect(dbPool.database.base)
+mongoose.connection.on('connected', () => {    
+  console.log('Mongoose connection open to ' + dbPool.database.base)
+})
+
 const Koa = require('koa')
 const app = new Koa()
 const views = require('koa-views')
